@@ -2,115 +2,700 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home Efficiency Pros</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Efficiency Pros | Whole House Fans & Solar Attic Fans</title>
+  <meta
+    name="description"
+    content="Home Efficiency Pros helps Utah homeowners cool their homes naturally with whole house fans and solar attic fans across the Wasatch Front."
+  />
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #081b28;
+      --panel: #0d2b3c;
+      --panel-2: #12384d;
+      --text: #f4f7fb;
+      --muted: #c7d4df;
+      --line: rgba(255,255,255,.12);
+      --blue: #4bb8ff;
+      --blue-dark: #2398ee;
+      --glow: rgba(75,184,255,.22);
+      --max: 1080px;
+    }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #0c2d3a;
-      color: white;
-      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0a2231 0%, #081b28 100%);
+      color: var(--text);
+      line-height: 1.5;
     }
-    .container {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px 20px 60px;
     }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 0 24px;
+    }
+
+    .brand {
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .brand span { color: var(--blue); }
+
+    .top-contact {
+      text-align: right;
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .hero {
+      background: linear-gradient(180deg, rgba(21,74,104,.92) 0%, rgba(10,34,49,.96) 100%);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 40px 28px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.28);
+    }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid rgba(75,184,255,.35);
+      background: rgba(75,184,255,.08);
+      color: #d8efff;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+    }
+
     h1 {
-      font-size: 36px;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: .96;
+      letter-spacing: -0.05em;
+      margin-bottom: 20px;
+      max-width: 840px;
+    }
+
+    h1 .blue {
+      color: var(--blue);
+      text-shadow: 0 0 18px var(--glow);
+    }
+
+    .subhead {
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 23px;
+      line-height: 1.55;
+      margin-bottom: 26px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 24px;
+      align-items: start;
+      margin-top: 26px;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 14px;
+      margin: 24px 0 28px;
+      color: var(--text);
+      font-size: 18px;
+    }
+
+    .checklist div::before {
+      content: "✓";
+      color: var(--blue);
+      font-weight: 900;
+      margin-right: 12px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      border-radius: 18px;
+      font-weight: 900;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover { transform: translateY(-1px); opacity: .98; }
+
+    .btn-primary {
+      background: var(--blue);
+      color: #04131d;
+      padding: 18px 28px;
+      font-size: 22px;
+      box-shadow: 0 0 28px var(--glow);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--line);
+      color: var(--text);
+      padding: 18px 28px;
+      font-size: 20px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .hero-card,
+    .section-card,
+    .form-card {
+      background: rgba(8,27,40,.78);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .hero-card h3,
+    .section-card h3,
+    .form-card h3 {
+      font-size: 25px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .hero-card p,
+    .section-card p,
+    .form-copy,
+    .small {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .section {
+      margin-top: 34px;
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.03;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      font-size: 19px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 900px;
+      margin-bottom: 24px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(15,47,66,.92) 0%, rgba(9,29,42,.96) 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px 18px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .card h4 {
+      font-size: 24px;
+      line-height: 1.1;
       margin-bottom: 10px;
     }
-    p {
-      font-size: 18px;
-      line-height: 1.6;
+
+    .card p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+      margin-bottom: 14px;
     }
-    .btn {
-      margin-top: 20px;
-      display: inline-block;
-      padding: 15px 25px;
-      background: #3bb3e6;
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
+
+    .bullet {
+      display: grid;
+      gap: 8px;
+      color: var(--text);
+      font-size: 15px;
     }
-    .section {
-      margin-top: 50px;
+
+    .bullet div::before {
+      content: "•";
+      color: var(--blue);
+      font-weight: 900;
+      margin-right: 8px;
     }
-    .footer {
-      margin-top: 60px;
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px 18px;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(75,184,255,.14);
+      border: 1px solid rgba(75,184,255,.28);
+      color: var(--blue);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .step h4 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .quote-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      background: #f6f8fb;
+      color: #07151e;
+      border: none;
+      border-radius: 16px;
+      padding: 16px 16px;
+      font-size: 16px;
+    }
+
+    textarea { min-height: 120px; resize: vertical; }
+
+    .label {
       font-size: 14px;
-      opacity: 0.8;
+      color: var(--muted);
+      margin-bottom: -4px;
+      text-align: left;
     }
-    a {
-      color: #3bb3e6;
+
+    .consent-box {
+      background: rgba(255,255,255,.02);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: left;
+    }
+
+    .consent-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .consent-item:last-child { margin-bottom: 0; }
+
+    .consent-item input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      margin-top: 2px;
+      flex: 0 0 auto;
+      accent-color: var(--blue);
+    }
+
+    .consent-item label {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+      cursor: pointer;
+    }
+
+    .submit {
+      border: none;
+      border-radius: 18px;
+      background: var(--blue);
+      color: #08131a;
+      font-weight: 900;
+      font-size: 22px;
+      padding: 18px 20px;
+      cursor: pointer;
+      box-shadow: 0 0 28px var(--glow);
+    }
+
+    .workflow {
+      margin-top: 18px;
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      text-align: left;
+    }
+
+    .footer {
+      margin-top: 36px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      color: var(--blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .video-box {
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .video-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: #06131d;
+      background: var(--blue);
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-weight: 900;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .cards,
+      .steps,
+      .quote-section {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .top-contact { text-align: left; }
     }
   </style>
 </head>
-
 <body>
+  <main class="wrap">
+    <div class="topbar">
+      <div class="brand"><span>Home</span> Efficiency Pros</div>
+      <div class="top-contact">
+        Authorized Breezy Service dealer<br />
+        Installation and fulfillment may be performed by Breezy Service
+      </div>
+    </div>
 
-<div class="container">
+    <section class="hero">
+      <div class="pill">Serving the Wasatch Front</div>
 
-  <h1>Home Efficiency Pros</h1>
+      <h1>
+        Cool Your Home<br />
+        <span class="blue">Naturally.</span> Breathe<br />
+        Cleaner Air
+      </h1>
 
-  <p>
-    Utah-based home ventilation and energy efficiency specialists.
-    We install whole home fans and solar attic fans to help homeowners
-    reduce heat, improve airflow, and lower energy costs.
-  </p>
+      <p class="subhead">
+        Home Efficiency Pros helps Utah homeowners reduce trapped heat, improve airflow,
+        and lower cooling strain with whole house fans and solar attic fan solutions across
+        Weber, Davis, Salt Lake, Utah, and surrounding counties.
+      </p>
 
-  <p>
-    Proudly serving the Wasatch Front including Weber, Davis,
-    Salt Lake, and Utah counties.
-  </p>
+      <div class="hero-grid">
+        <div>
+          <div class="checklist">
+            <div>Local Wasatch Front Team</div>
+            <div>Same-Week Installation Availability</div>
+            <div>Energy Saving Products</div>
+            <div>Whole House Fan + Solar Attic Fan Options</div>
+          </div>
 
-  <a class="btn" href="#contact">Request a Free Quote</a>
+          <div class="btn-row">
+            <a class="btn-primary" href="#quote">Request a Free Quote</a>
+            <a class="btn-secondary" href="#video">Watch How It Works</a>
+          </div>
+        </div>
 
-  <div class="section">
-    <h2>Our Services</h2>
-    <p>✔ Whole House Fan Installation</p>
-    <p>✔ Solar Attic Fan Installation</p>
-    <p>✔ Energy Efficiency Upgrades</p>
-  </div>
+        <div class="hero-card" id="video">
+          <h3>See the full story</h3>
+          <p>
+            The printed Breezy QR code appears to point homeowners to Breezy-branded explainer
+            content. Replace the button below with the exact video URL once you confirm the QR destination.
+          </p>
+          <div class="video-box">
+            <div class="small">
+              Suggested use: link this button to the confirmed attic fan / whole house fan explainer video.
+            </div>
+            <a class="video-link" href="https://www.breezyservice.com/solar-attic-fans" target="_blank" rel="noopener">
+              View Product / Explainer Page
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="section">
-    <h2>About Us</h2>
-    <p>
-      Home Efficiency Pros is an authorized dealer and installer
-      of Breezy ventilation systems. Our team provides fast,
-      professional installation and local expertise.
-    </p>
-  </div>
+    <section class="section">
+      <h2 class="section-title">Why Home Efficiency Pros</h2>
+      <p class="section-sub">
+        Breezy’s public site currently positions the business around whole house fans, solar attic fans,
+        same-week installation, local Wasatch Front service, and energy savings. This page mirrors that
+        proven structure while keeping the identity consistent for Twilio review. 3
+      </p>
 
-  <div class="section" id="contact">
-    <h2>Contact</h2>
-    <p>Phone: (801) 441-4326</p>
-    <p>Email: greensamuraimarketing@gmail.com</p>
-  </div>
+      <div class="cards">
+        <div class="card">
+          <div class="eyebrow">Essential Ventilation</div>
+          <h4>Solar Attic Fans</h4>
+          <p>
+            Help exhaust superheated attic air before it radiates into your living space and forces your AC to work harder.
+          </p>
+          <div class="bullet">
+            <div>Reduce trapped attic heat</div>
+            <div>Help lower ceiling temperature strain</div>
+            <div>Solar-powered airflow solution</div>
+          </div>
+        </div>
 
-  <div class="section">
-    <h2>SMS Communication</h2>
-    <p>
-      By submitting your information, you agree to receive SMS messages
-      from Home Efficiency Pros regarding appointments, estimates,
-      and service updates. Message frequency varies. Message and data
-      rates may apply. Reply STOP to opt out or HELP for assistance.
-    </p>
-  </div>
+        <div class="card">
+          <div class="eyebrow">Comfort Ventilation</div>
+          <h4>Whole House Fans</h4>
+          <p>
+            Pull cool evening air through the home and flush stale, hot indoor air out in minutes.
+          </p>
+          <div class="bullet">
+            <div>Rapid fresh-air exchange</div>
+            <div>Natural cooling approach</div>
+            <div>Reduce overnight AC dependence</div>
+          </div>
+        </div>
 
-  <div class="footer">
-    <p>
-      © 2026 Home Efficiency Pros – Wasatch Front, Utah
-    </p>
-    <p>
-      <a href="privacy-policy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms & Conditions</a>
-    </p>
-  </div>
+        <div class="card">
+          <div class="eyebrow">Complete System</div>
+          <h4>Whole-Home Efficiency</h4>
+          <p>
+            Combine attic ventilation and whole house airflow to attack heat from the roof down through the living space.
+          </p>
+          <div class="bullet">
+            <div>Improve comfort</div>
+            <div>Reduce cooling load pressure</div>
+            <div>Support longer system life</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</div>
+    <section class="section">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-sub">
+        Breezy’s live site explains a simple four-step process: free consultation, transparent quote,
+        fast installation, and same-day comfort improvement. This keeps the customer journey easy to verify. 4
+      </p>
 
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Request a Quote</h4>
+          <p>Fill out the form below or call to request a consultation for your home.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Get Your Recommendation</h4>
+          <p>We review your home needs and recommend the right fan or ventilation setup.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Receive Transparent Pricing</h4>
+          <p>You get a clear quote before scheduling installation or next steps.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h4>Schedule Installation</h4>
+          <p>If you move forward, installation and fulfillment may be performed by Breezy Service.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quote">
+      <h2 class="section-title">Request a Free Quote</h2>
+      <p class="section-sub">
+        This is the public opt-in point Twilio reviewers need to see clearly. The checkbox below is not pre-selected,
+        the message types are spelled out, and the workflow is explained immediately underneath.
+      </p>
+
+      <div class="quote-section">
+        <div class="form-card">
+          <h3>Tell us about your home</h3>
+          <p class="form-copy">
+            Use a real monitored business number and inbox here. Do not publish a random personal email unless that is
+            actually the inbox handling customer leads.
+          </p>
+
+          <form action="#" method="post">
+            <div class="label">Full Name</div>
+            <input type="text" name="full_name" placeholder="Your full name" required />
+
+            <div class="label">Email Address</div>
+            <input type="email" name="email" placeholder="your@email.com" required />
+
+            <div class="label">Mobile Phone</div>
+            <input type="tel" name="phone" placeholder="(801) 555-5555" required />
+
+            <div class="label">City / Service Area</div>
+            <input type="text" name="city" placeholder="Ogden, Layton, Sandy, Provo..." />
+
+            <div class="label">What are you interested in?</div>
+            <select name="interest">
+              <option>Solar Attic Fan</option>
+              <option>Whole House Fan</option>
+              <option>Both / Need recommendation</option>
+            </select>
+
+            <div class="label">Project Notes</div>
+            <textarea name="notes" placeholder="Tell us about your home, attic heat, upstairs hot spots, or what you're looking for."></textarea>
+
+            <div class="consent-box">
+              <div class="consent-item">
+                <input type="checkbox" id="service_sms" name="service_sms" />
+                <label for="service_sms">
+                  I agree to receive service-related SMS messages from Home Efficiency Pros regarding my inquiry,
+                  quote requests, scheduling, appointment reminders, service updates, and follow-up communication.
+                  Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help.
+                  Consent is not a condition of purchase.
+                </label>
+              </div>
+
+              <div class="consent-item">
+                <input type="checkbox" id="marketing_sms" name="marketing_sms" />
+                <label for="marketing_sms">
+                  Optional: I agree to receive marketing SMS messages from Home Efficiency Pros, including promotions,
+                  seasonal offers, and related service announcements. Message frequency varies. Message and data rates may apply.
+                  Reply STOP to opt out or HELP for help. Consent is not a condition of purchase.
+                </label>
+              </div>
+            </div>
+
+            <button class="submit" type="submit">Request Free Quote</button>
+          </form>
+        </div>
+
+        <div class="section-card">
+          <h3>How the SMS opt-in works</h3>
+          <p>
+            Customers opt in on this website by entering their contact information into the quote form and manually selecting
+            one or both SMS consent checkboxes before submitting the form.
+          </p>
+          <p>
+            The service-related checkbox covers messages about quote requests, scheduling, appointment reminders,
+            service updates, and follow-up communication.
+          </p>
+          <p>
+            The optional marketing checkbox covers promotional and marketing text messages. Neither checkbox is pre-selected,
+            and consent is not required to purchase services.
+          </p>
+          <div class="workflow">
+            <strong>Reviewer workflow summary:</strong><br />
+            User lands on this page → clicks “Request a Free Quote” or scrolls here →
+            enters name, email, and phone → manually checks the desired SMS consent box →
+            submits the form → may receive messages related to the selected consent type.
+          </div>
+
+          <div style="margin-top:18px" class="small">
+            Use one consistent number and email everywhere on this page, in privacy, in terms, and in the Twilio campaign.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-sub">
+        Replace the placeholders below with the final contact details you actually want prospects and Twilio reviewers to use.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h4>Business Phone</h4>
+          <p><strong>[REPLACE WITH FINAL BUSINESS NUMBER]</strong></p>
+        </div>
+        <div class="card">
+          <h4>Email</h4>
+          <p><strong>[REPLACE WITH FINAL BUSINESS EMAIL]</strong></p>
+        </div>
+        <div class="card">
+          <h4>Service Area</h4>
+          <p>Wasatch Front, Utah — including Weber, Davis, Salt Lake, Utah, and surrounding counties.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Home Efficiency Pros is an authorized Breezy Service dealer. Installation and fulfillment may be performed by Breezy Service.<br />
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+      </div>
+    </footer>
+  </main>
 </body>
-</html>
+  </html>
