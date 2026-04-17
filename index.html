@@ -1,200 +1,765 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Efficiency Pros | Whole House Fans & Solar Attic Fans</title>
+  <meta
+    name="description"
+    content="Home Efficiency Pros helps Utah homeowners improve airflow, reduce trapped heat, and explore whole house fan and solar attic fan solutions across the Wasatch Front."
+  />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-<title>Home Efficiency Pros | Cooling & Ventilation Experts</title>
+    :root {
+      --bg: #081b28;
+      --panel: #0d2b3c;
+      --panel-2: #12384d;
+      --panel-3: #154a68;
+      --text: #f4f7fb;
+      --muted: #c7d4df;
+      --line: rgba(255,255,255,.12);
+      --blue: #4bb8ff;
+      --blue-dark: #2398ee;
+      --glow: rgba(75,184,255,.22);
+      --max: 1120px;
+      --radius: 24px;
+    }
 
-<meta name="description" content="Get a fast home cooling estimate for whole house fans and solar attic fans in Utah. Improve airflow and reduce heat today." />
+    html { scroll-behavior: smooth; }
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial;background:#081b28;color:#f4f7fb}
-.wrap{max-width:1100px;margin:auto;padding:20px}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0a2231 0%, #081b28 100%);
+      color: var(--text);
+      line-height: 1.55;
+    }
 
-h1{font-size:52px;line-height:1}
-h2{font-size:32px;margin-bottom:10px}
-p{color:#c7d4df}
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-.btn{
-display:inline-block;
-padding:16px 22px;
-border-radius:12px;
-background:#4bb8ff;
-color:#021018;
-font-weight:800;
-margin-top:15px;
-cursor:pointer;
-}
+    .wrap {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px 20px 64px;
+    }
 
-.section{margin-top:50px}
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 8px 0 24px;
+    }
 
-.card{
-background:#0d2b3c;
-padding:20px;
-border-radius:16px;
-margin-top:15px;
-}
+    .brand {
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
 
-input,select{
-width:100%;
-padding:14px;
-border-radius:10px;
-margin-top:8px;
-border:none;
-}
+    .brand span { color: var(--blue); }
 
-.video iframe{
-width:100%;
-height:280px;
-border-radius:12px;
-margin-top:10px;
-}
+    .top-contact {
+      text-align: right;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
 
-.funnel-step{display:none}
-.funnel-step.active{display:block}
+    .hero {
+      background: linear-gradient(180deg, rgba(21,74,104,.94) 0%, rgba(10,34,49,.98) 100%);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 42px 28px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.28);
+    }
 
-.footer{margin-top:40px;font-size:14px;color:#aaa}
-</style>
+    .pill {
+      display: inline-block;
+      border: 1px solid rgba(75,184,255,.35);
+      background: rgba(75,184,255,.08);
+      color: #d8efff;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 78px);
+      line-height: .96;
+      letter-spacing: -0.05em;
+      margin-bottom: 20px;
+      max-width: 860px;
+    }
+
+    h1 .blue {
+      color: var(--blue);
+      text-shadow: 0 0 18px var(--glow);
+    }
+
+    .subhead {
+      max-width: 860px;
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.55;
+      margin-bottom: 26px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 24px;
+      align-items: start;
+      margin-top: 26px;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 14px;
+      margin: 24px 0 28px;
+      color: var(--text);
+      font-size: 18px;
+    }
+
+    .checklist div::before {
+      content: "✓";
+      color: var(--blue);
+      font-weight: 900;
+      margin-right: 12px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      border-radius: 18px;
+      font-weight: 900;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-1px);
+      opacity: .98;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: #04131d;
+      padding: 18px 28px;
+      font-size: 22px;
+      box-shadow: 0 0 28px var(--glow);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--line);
+      color: var(--text);
+      padding: 18px 28px;
+      font-size: 20px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .hero-card,
+    .section-card,
+    .form-card,
+    .video-card,
+    .card,
+    .step {
+      background: rgba(8,27,40,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .hero-card,
+    .section-card,
+    .form-card,
+    .video-card {
+      padding: 24px;
+    }
+
+    .hero-card h3,
+    .section-card h3,
+    .form-card h3,
+    .video-card h3 {
+      font-size: 25px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .hero-card p,
+    .section-card p,
+    .form-copy,
+    .small,
+    .video-card p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .notice {
+      margin-top: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: 18px;
+      padding: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .section {
+      margin-top: 36px;
+      padding-top: 36px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.03;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      font-size: 19px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 940px;
+      margin-bottom: 24px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(15,47,66,.92) 0%, rgba(9,29,42,.96) 100%);
+      padding: 22px 18px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .card h4 {
+      font-size: 24px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .bullet {
+      display: grid;
+      gap: 8px;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .bullet div::before {
+      content: "•";
+      color: var(--blue);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #05131d;
+      margin-top: 14px;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      padding: 22px 18px;
+      background: var(--panel);
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(75,184,255,.14);
+      border: 1px solid rgba(75,184,255,.28);
+      color: var(--blue);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .step h4 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .quote-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      background: #f6f8fb;
+      color: #07151e;
+      border: none;
+      border-radius: 16px;
+      padding: 16px 16px;
+      font-size: 16px;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .label {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: -4px;
+      text-align: left;
+    }
+
+    .consent-box {
+      background: rgba(255,255,255,.02);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: left;
+    }
+
+    .consent-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .consent-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .consent-item input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      margin-top: 2px;
+      flex: 0 0 auto;
+      accent-color: var(--blue);
+    }
+
+    .consent-item label {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+      cursor: pointer;
+    }
+
+    .submit {
+      border: none;
+      border-radius: 18px;
+      background: var(--blue);
+      color: #08131a;
+      font-weight: 900;
+      font-size: 22px;
+      padding: 18px 20px;
+      cursor: pointer;
+      box-shadow: 0 0 28px var(--glow);
+    }
+
+    .workflow {
+      margin-top: 18px;
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      text-align: left;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .footer {
+      margin-top: 36px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      color: var(--blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .cards,
+      .steps,
+      .quote-section,
+      .video-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .top-contact {
+        text-align: left;
+      }
+
+      .brand {
+        font-size: 32px;
+      }
+
+      .subhead {
+        font-size: 20px;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<div class="wrap">
+  <main class="wrap">
+    <div class="topbar">
+      <div class="brand"><span>Home</span> Efficiency Pros</div>
+      <div class="top-contact">
+        Authorized Breezy Service dealer<br />
+        Installation and fulfillment may be performed by Breezy Service
+      </div>
+    </div>
 
-<h1>Cool Your Home <br><span style="color:#4bb8ff">Naturally</span></h1>
+    <section class="hero">
+      <div class="pill">Serving the Wasatch Front</div>
 
-<p>Whole house fans and solar attic fans designed for Utah homes.</p>
+      <h1>
+        Cool Your Home<br />
+        <span class="blue">Naturally.</span> Breathe<br />
+        Cleaner Air
+      </h1>
 
-<div class="btn" onclick="startFunnel()">Get My Home Cooling Estimate</div>
+      <p class="subhead">
+        Home Efficiency Pros helps Utah homeowners improve airflow, reduce trapped heat,
+        and explore whole house fan and solar attic fan solutions across Weber, Davis,
+        Salt Lake, Utah, and surrounding counties.
+      </p>
 
-<!-- 🔥 FUNNEL -->
-<div id="funnel" class="section" style="display:none">
+      <div class="hero-grid">
+        <div>
+          <div class="checklist">
+            <div>Local Wasatch Front Service</div>
+            <div>Whole House Fan + Solar Attic Fan Options</div>
+            <div>Quote Requests and Scheduling Support</div>
+            <div>Authorized Breezy Service Dealer</div>
+          </div>
 
-<div id="step1" class="funnel-step active">
-<h2>Step 1: Home Size</h2>
-<select id="size">
-<option>Under 1500 sqft</option>
-<option>1500–3000 sqft</option>
-<option>3000+ sqft</option>
-</select>
-<div class="btn" onclick="nextStep(2)">Next</div>
-</div>
+          <div class="btn-row">
+            <a class="btn-primary" href="#quote">Request a Free Quote</a>
+            <a class="btn-secondary" href="#videos">Watch Product Videos</a>
+          </div>
+        </div>
 
-<div id="step2" class="funnel-step">
-<h2>Main Issue?</h2>
-<select id="problem">
-<option>Too hot upstairs</option>
-<option>AC runs constantly</option>
-<option>Poor airflow</option>
-</select>
-<div class="btn" onclick="nextStep(3)">Next</div>
-</div>
+        <div class="hero-card">
+          <h3>Home ventilation solutions for Utah homeowners</h3>
+          <p>
+            We help homeowners learn more about attic ventilation and whole-home airflow
+            solutions designed to improve comfort and reduce heat buildup.
+          </p>
+          <div class="notice">
+            Home Efficiency Pros is an authorized Breezy Service dealer. Installation and
+            fulfillment may be performed by Breezy Service depending on location, product,
+            and scheduling availability.
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div id="step3" class="funnel-step">
-<h2>What are you interested in?</h2>
-<select id="interest">
-<option>Solar Attic Fan</option>
-<option>Whole House Fan</option>
-<option>Not sure</option>
-</select>
-<div class="btn" onclick="showEstimate()">Get Estimate</div>
-</div>
+    <section class="section">
+      <h2 class="section-title">Why Home Efficiency Pros</h2>
+      <p class="section-sub">
+        We focus on ventilation solutions that help Utah homeowners support better airflow,
+        reduce trapped attic heat, and create more comfortable living spaces.
+      </p>
 
-<div id="estimate" class="funnel-step">
-<h2>Estimated Range</h2>
-<p style="font-size:22px;font-weight:800;margin:10px 0">
-$1,200 – $3,500 installed
-</p>
-<p>Based on typical Utah homes. Final pricing depends on attic + layout.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="eyebrow">Essential Ventilation</div>
+          <h4>Solar Attic Fans</h4>
+          <p>
+            Help exhaust superheated attic air before it radiates into the living space
+            and increases cooling strain.
+          </p>
+          <div class="bullet">
+            <div>Reduce trapped attic heat</div>
+            <div>Support attic airflow</div>
+            <div>Solar-powered ventilation option</div>
+          </div>
+        </div>
 
-<div class="btn" onclick="showForm()">Continue</div>
-</div>
+        <div class="card">
+          <div class="eyebrow">Comfort Ventilation</div>
+          <h4>Whole House Fans</h4>
+          <p>
+            Pull cooler outdoor air through the home and flush stale, hot indoor air
+            out through the attic.
+          </p>
+          <div class="bullet">
+            <div>Rapid fresh-air exchange</div>
+            <div>Natural cooling approach</div>
+            <div>Supports overnight cooling</div>
+          </div>
+        </div>
 
-</div>
+        <div class="card">
+          <div class="eyebrow">Complete Option</div>
+          <h4>Combined Solutions</h4>
+          <p>
+            Some homes benefit from a combined ventilation strategy based on layout,
+            attic conditions, and comfort goals.
+          </p>
+          <div class="bullet">
+            <div>Tailored product recommendations</div>
+            <div>Attic + whole-home airflow strategy</div>
+            <div>Quote based on your home and needs</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- 🔥 VIDEOS -->
-<div class="section">
-<h2>See How It Works</h2>
+    <section class="section" id="videos">
+      <h2 class="section-title">See How It Works</h2>
+      <p class="section-sub">
+        Watch product explainer videos to learn more about whole house fan and solar attic
+        fan options for Utah homes.
+      </p>
 
-<div class="video">
-<iframe src="https://www.youtube.com/embed/hLfpJQHfi-I" allowfullscreen></iframe>
-</div>
+      <div class="video-grid">
+        <div class="video-card">
+          <h3>Whole House Fan Overview</h3>
+          <p>
+            Learn how whole house fan systems help move fresh air through the home and
+            reduce trapped indoor heat.
+          </p>
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/hLfpJQHfi-I"
+              title="Whole House Fan Product Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
 
-<div class="video">
-<iframe src="https://www.youtube.com/embed/8lyykF24IIQ" allowfullscreen></iframe>
-</div>
-</div>
+        <div class="video-card">
+          <h3>Solar Attic Fan Overview</h3>
+          <p>
+            Learn how solar attic fans help reduce attic heat buildup and support
+            roof-space ventilation.
+          </p>
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/8lyykF24IIQ"
+              title="Solar Attic Fan Product Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- 🔥 FORM -->
-<div id="formSection" class="section" style="display:none">
+    <section class="section">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-sub">
+        Our process is simple: request a quote, review the right option for your home,
+        receive pricing and next-step details, and schedule installation if you choose to move forward.
+      </p>
 
-<h2>Request Your Free Quote</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Request a Quote</h4>
+          <p>
+            Fill out the quote request form below with your contact information and project interest.
+          </p>
+        </div>
 
-<input placeholder="Full Name" />
-<input placeholder="Email" />
-<input placeholder="Phone" />
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Review Product Options</h4>
+          <p>
+            We review your needs and help you explore solar attic fan, whole house fan,
+            or combined solution options.
+          </p>
+        </div>
 
-<select>
-<option>Solar Attic Fan</option>
-<option>Whole House Fan</option>
-<option>Both</option>
-</select>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Receive Quote Details</h4>
+          <p>
+            You receive quote information, next-step details, and scheduling communication
+            based on your request.
+          </p>
+        </div>
 
-<div style="margin-top:15px">
-<label>
-<input type="checkbox">
-I agree to receive SMS messages regarding my inquiry, scheduling, and service updates.
-Message & data rates may apply. Reply STOP to opt out.
-</label>
-</div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h4>Schedule Next Steps</h4>
+          <p>
+            If you decide to move forward, installation and fulfillment may be performed by Breezy Service.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<div class="btn">Submit Request</div>
+    <section class="section" id="quote">
+      <h2 class="section-title">Request a Free Quote</h2>
+      <p class="section-sub">
+        Submit your information below to request product guidance, quote details, scheduling communication,
+        and service-related follow-up.
+      </p>
 
-</div>
+      <div class="quote-section">
+        <div class="form-card">
+          <h3>Tell us about your home</h3>
+          <p class="form-copy">
+            Customers can request service by submitting this form. By providing your phone number and selecting
+            SMS consent, you agree to receive messages related to your inquiry based on the options you select below.
+          </p>
 
-<!-- 🔥 CONTACT -->
-<div class="section">
-<h2>Contact</h2>
+          <form action="#" method="post">
+            <div class="label">Full Name</div>
+            <input type="text" name="full_name" placeholder="Your full name" required />
 
-<div class="card">
-Email: info@homeefficiencypros.com<br>
-Phone: [ADD BUSINESS NUMBER]
-</div>
-</div>
+            <div class="label">Email Address</div>
+            <input type="email" name="email" placeholder="info@yourdomain.com" required />
 
-<!-- 🔥 FOOTER -->
-<div class="footer">
-Home Efficiency Pros<br>
-Authorized Breezy Service Dealer<br><br>
+            <div class="label">Mobile Phone</div>
+            <input type="tel" name="phone" placeholder="(801) XXX-XXXX" required />
 
-<a href="privacy-policy.html">Privacy</a> |
-<a href="terms.html">Terms</a>
-</div>
+            <div class="label">City / Service Area</div>
+            <input type="text" name="city" placeholder="Ogden, Layton, Sandy, Provo..." />
 
-</div>
+            <div class="label">What are you interested in?</div>
+            <select name="interest">
+              <option>Solar Attic Fan</option>
+              <option>Whole House Fan</option>
+              <option>Both / Need recommendation</option>
+            </select>
 
-<script>
-function startFunnel(){
-document.getElementById("funnel").style.display="block"
-window.scrollTo({top:400,behavior:"smooth"})
-}
+            <div class="label">Project Notes</div>
+            <textarea name="notes" placeholder="Tell us about your home, airflow issues, attic heat, or what you're looking for."></textarea>
 
-function nextStep(n){
-document.querySelectorAll(".funnel-step").forEach(e=>e.classList.remove("active"))
-document.getElementById("step"+n).classList.add("active")
-}
+            <div class="consent-box">
+              <div class="consent-item">
+                <input type="checkbox" id="service_sms" name="service_sms" />
+                <label for="service_sms">
+                  I agree to receive service-related SMS messages from Home Efficiency Pros regarding my inquiry,
+                  quote requests, scheduling, appointment reminders, service updates, and follow-up communication.
+                  Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help.
+                  Consent is not a condition of purchase.
+                </label>
+              </div>
 
-function showEstimate(){
-document.querySelectorAll(".funnel-step").forEach(e=>e.classList.remove("active"))
-document.getElementById("estimate").classList.add("active")
-}
+              <div class="consent-item">
+                <input type="checkbox" id="marketing_sms" name="marketing_sms" />
+                <label for="marketing_sms">
+                  Optional: I agree to receive marketing SMS messages from Home Efficiency Pros, including promotions,
+                  seasonal offers, and service announcements. Message frequency varies. Message and data rates may apply.
+                  Reply STOP to opt out or HELP for help. Consent is not a condition of purchase.
+                </label>
+              </div>
+            </div>
 
-function showForm(){
-document.getElementById("formSection").style.display="block"
-window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"})
-}
-</script>
+            <button class="submit" type="submit">Request Free Quote</button>
+          </form>
+        </div>
 
-</body>
-</html>
+        <div class="section-card">
+          <h3>How the SMS opt-in works</h3
