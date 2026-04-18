@@ -10,19 +10,19 @@
   />
   <style>
     :root {
-      --bg: #f4f8fc;
-      --surface: #ffffff;
-      --surface-alt: #eef5fb;
-      --ink: #10273f;
-      --muted: #627a90;
-      --line: #d7e4ef;
-      --blue: #1573d6;
-      --blue-dark: #0e5eb4;
-      --navy: #0f2236;
-      --green: #19b352;
-      --green-dark: #149143;
-      --shadow: 0 14px 34px rgba(16, 39, 63, 0.08);
-      --radius: 18px;
+      --bg: #071a2a;
+      --bg-2: #0b2438;
+      --panel: #102c43;
+      --panel-2: #143652;
+      --ink: #eef6fc;
+      --muted: #a9c0d3;
+      --line: rgba(87, 169, 243, 0.25);
+      --blue: #44a8ff;
+      --blue-2: #78c2ff;
+      --green: #22c55e;
+      --green-2: #18a34c;
+      --shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+      --radius: 20px;
       --max: 1180px;
     }
 
@@ -37,13 +37,13 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
+      background: linear-gradient(180deg, #051320 0%, #0a2134 100%);
       color: var(--ink);
       line-height: 1.6;
     }
 
     a {
-      color: var(--blue);
+      color: var(--blue-2);
       text-decoration: none;
     }
 
@@ -62,15 +62,16 @@
     }
 
     .topbar {
-      background: var(--navy);
-      color: #d6e4f0;
+      background: #04101a;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: #d8e6f1;
       font-size: 14px;
     }
 
     .topbar .container {
       display: flex;
       justify-content: space-between;
-      gap: 16px;
+      gap: 14px;
       padding: 10px 0;
       flex-wrap: wrap;
     }
@@ -84,9 +85,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(7, 26, 42, 0.92);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     .nav {
@@ -100,15 +101,15 @@
     .brand-wrap {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 4px;
     }
 
     .brand {
-      font-size: 29px;
+      font-size: 30px;
       font-weight: 900;
-      letter-spacing: -0.4px;
+      letter-spacing: -0.5px;
       line-height: 1;
-      color: var(--ink);
+      color: #ffffff;
     }
 
     .brand span {
@@ -119,7 +120,7 @@
       color: var(--muted);
       font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 1.4px;
+      letter-spacing: 1.5px;
       font-weight: 700;
     }
 
@@ -161,40 +162,42 @@
     }
 
     .btn-primary:hover {
-      background: var(--green-dark);
+      background: var(--green-2);
     }
 
     .btn-secondary {
-      background: #ffffff;
-      color: var(--blue);
-      border: 1px solid rgba(21, 115, 214, 0.22);
+      background: transparent;
+      color: var(--blue-2);
+      border: 1px solid rgba(120, 194, 255, 0.35);
     }
 
     .btn-secondary:hover {
-      background: #eef5fd;
+      background: rgba(120, 194, 255, 0.08);
     }
 
     section {
-      padding: 68px 0;
+      padding: 72px 0;
     }
 
     .hero {
-      padding: 76px 0 54px;
-      background: linear-gradient(180deg, #ffffff 0%, #f4f8fc 100%);
+      padding: 78px 0 56px;
+      background:
+        radial-gradient(circle at top right, rgba(68,168,255,0.14), transparent 30%),
+        linear-gradient(180deg, #071a2a 0%, #0a2235 100%);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.03fr 0.97fr;
-      gap: 30px;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 28px;
       align-items: start;
     }
 
     .eyebrow {
       display: inline-block;
-      color: var(--blue);
-      background: rgba(21, 115, 214, 0.06);
-      border: 1px solid rgba(21, 115, 214, 0.14);
+      color: var(--blue-2);
+      background: rgba(68,168,255,0.08);
+      border: 1px solid rgba(68,168,255,0.22);
       border-radius: 999px;
       padding: 8px 12px;
       font-size: 12px;
@@ -206,29 +209,32 @@
 
     h1, h2, h3 {
       margin-top: 0;
-      line-height: 1.12;
-      letter-spacing: -0.4px;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
     }
 
     h1 {
-      font-size: clamp(38px, 5.6vw, 62px);
+      font-size: clamp(40px, 6vw, 68px);
       margin-bottom: 16px;
+      color: #ffffff;
     }
 
     h2 {
-      font-size: clamp(28px, 3.2vw, 40px);
+      font-size: clamp(28px, 3.5vw, 42px);
       margin-bottom: 14px;
+      color: #ffffff;
     }
 
     h3 {
       font-size: 24px;
       margin-bottom: 10px;
+      color: #ffffff;
     }
 
     .lead {
-      font-size: 19px;
+      font-size: 20px;
       color: var(--muted);
-      max-width: 64ch;
+      max-width: 62ch;
       margin-bottom: 24px;
     }
 
@@ -242,16 +248,17 @@
     }
 
     .hero-points li {
-      background: var(--surface);
+      background: rgba(16, 44, 67, 0.9);
       border: 1px solid var(--line);
       border-radius: 14px;
-      padding: 13px 14px;
+      padding: 14px 14px;
       font-weight: 700;
+      color: #eaf5ff;
       box-shadow: var(--shadow);
     }
 
     .card {
-      background: var(--surface);
+      background: linear-gradient(180deg, rgba(16,44,67,0.98), rgba(14,36,56,0.98));
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -263,11 +270,6 @@
     .video-box,
     .policy-box {
       padding: 24px;
-    }
-
-    .hero-card h2 {
-      font-size: 30px;
-      margin-bottom: 8px;
     }
 
     .hero-card p,
@@ -297,7 +299,7 @@
       font-size: 14px;
       font-weight: 800;
       margin-bottom: 6px;
-      color: var(--ink);
+      color: #f3f9ff;
     }
 
     input,
@@ -305,9 +307,9 @@
     textarea {
       width: 100%;
       border-radius: 12px;
-      border: 1px solid var(--line);
-      background: #ffffff;
-      color: var(--ink);
+      border: 1px solid rgba(120,194,255,0.18);
+      background: #0d2235;
+      color: #ffffff;
       font-size: 16px;
       padding: 14px 14px;
       outline: none;
@@ -316,8 +318,8 @@
     input:focus,
     select:focus,
     textarea:focus {
-      border-color: rgba(21, 115, 214, 0.42);
-      box-shadow: 0 0 0 3px rgba(21, 115, 214, 0.08);
+      border-color: rgba(68,168,255,0.55);
+      box-shadow: 0 0 0 3px rgba(68,168,255,0.10);
     }
 
     textarea {
@@ -327,12 +329,12 @@
 
     input::placeholder,
     textarea::placeholder {
-      color: #8397aa;
+      color: #9cb3c7;
     }
 
     .consent-box {
-      border: 1px solid var(--line);
-      background: var(--surface-alt);
+      border: 1px solid rgba(120,194,255,0.18);
+      background: rgba(120,194,255,0.06);
       border-radius: 14px;
       padding: 14px;
     }
@@ -374,7 +376,7 @@
     .product-tag {
       display: inline-block;
       margin-bottom: 10px;
-      color: var(--blue);
+      color: var(--blue-2);
       font-size: 12px;
       font-weight: 800;
       text-transform: uppercase;
@@ -395,9 +397,9 @@
     }
 
     .band {
-      background: #edf4fb;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      background: rgba(9, 31, 48, 0.72);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     .trust-grid {
@@ -410,9 +412,10 @@
       padding: 18px 16px;
       text-align: center;
       border-radius: 14px;
-      background: #ffffff;
+      background: rgba(16,44,67,0.96);
       border: 1px solid var(--line);
       font-weight: 800;
+      color: #f4faff;
       box-shadow: var(--shadow);
     }
 
@@ -470,15 +473,15 @@
       margin-bottom: 18px;
       padding: 14px 16px;
       border-radius: 12px;
-      background: #e9f7ee;
-      border: 1px solid #b7e6c6;
-      color: #185f34;
+      background: rgba(34,197,94,0.14);
+      border: 1px solid rgba(34,197,94,0.35);
+      color: #c9ffd9;
       font-weight: 700;
     }
 
     footer {
-      background: var(--navy);
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: #04111b;
+      border-top: 1px solid rgba(255,255,255,0.05);
       padding: 34px 0;
       color: #c8d7e6;
     }
@@ -525,6 +528,37 @@
       nav ul {
         gap: 14px;
       }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      h1 {
+        font-size: 52px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .brand {
+        font-size: 24px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .lead {
+        font-size: 18px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -566,7 +600,7 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Authorized Breezy Dealer</div>
-          <h1>Whole House Fans &amp; Solar Attic Fans Installed by Local Experts</h1>
+          <h1>Home Comfort &amp; Energy Savings</h1>
           <p class="lead">
             Home Efficiency Pros is an authorized dealer and installer for Breezy whole house fans and solar attic fans.
             We help homeowners compare options, request pricing, and move forward with the right ventilation system for their home.
@@ -673,7 +707,7 @@
       <div class="container">
         <div class="trust-grid">
           <div class="trust-item">Authorized Breezy Dealer</div>
-          <div class="trust-item">Product Education & Videos</div>
+          <div class="trust-item">Embedded Product Videos</div>
           <div class="trust-item">Optional SMS Consent</div>
           <div class="trust-item">Professional Quote Request Form</div>
         </div>
@@ -685,12 +719,11 @@
         <div class="card info-box">
           <h2>About Home Efficiency Pros</h2>
           <p>
-            Home Efficiency Pros is an authorized Breezy dealer and installer serving Utah homeowners with whole house fan
-            and solar attic fan solutions. We help customers understand product options, request pricing, and move through the quote and installation process with clear communication.
+            Home Efficiency Pros is the local business customers work with for Breezy product guidance, quotes,
+            installation coordination, and follow-up support. Breezy is the product brand. Home Efficiency Pros is the authorized dealer and installer.
           </p>
           <p>
-            Breezy is the product brand. Home Efficiency Pros is the local business customers work with for product guidance,
-            quotes, installation coordination, and follow-up support.
+            We focus on helping homeowners understand whole house fan and solar attic fan options and choose the right system for their home.
           </p>
         </div>
 
@@ -746,19 +779,4 @@
               <li>Soft-start and variable speed control</li>
               <li>Advanced ceiling grille with built-in dampers</li>
               <li>Programmable timer and controls</li>
-              <li>Fresh air cooling through open windows</li>
-              <li>Limited lifetime warranty</li>
-            </ul>
-          </div>
-
-          <div class="card product-box">
-            <div class="product-tag">Recommended Bundle</div>
-            <h3>Whole House + Solar Attic Fan System</h3>
-            <p>Combined Home Comfort Upgrade</p>
-            <div class="price">$8,600.00</div>
-            <ul>
-              <li>Whole house fan plus solar attic fan package</li>
-              <li>Improved airflow and attic heat reduction</li>
-              <li>Energy-saving ventilation strategy</li>
-              <li>Ideal for comfort-minded homeowners</li>
-              <li>Quote and installation follo
+              <li>Fresh air cooling through open window
