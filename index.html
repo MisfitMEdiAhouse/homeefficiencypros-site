@@ -6,21 +6,21 @@
   <title>Home Efficiency Pros | Authorized Breezy Dealer & Installer</title>
   <meta
     name="description"
-    content="Home Efficiency Pros is an authorized Breezy dealer and installer offering whole house fans, solar attic fans, product education, quotes, and customer support for Utah homeowners."
+    content="Home Efficiency Pros is an authorized Breezy dealer and installer offering whole house fans, solar attic fans, quotes, product education, and customer support for Utah homeowners."
   />
   <style>
     :root {
-      --bg: #071a2a;
-      --bg-2: #0b2438;
-      --panel: #102c43;
-      --panel-2: #143652;
+      --bg: #061726;
+      --bg-2: #0a2235;
+      --panel: #0f2b42;
+      --panel-2: #13344f;
       --ink: #eef6fc;
-      --muted: #a9c0d3;
-      --line: rgba(87, 169, 243, 0.25);
-      --blue: #44a8ff;
-      --blue-2: #78c2ff;
-      --green: #22c55e;
-      --green-2: #18a34c;
+      --muted: #a8bfd2;
+      --line: rgba(91, 174, 247, 0.22);
+      --blue: #46abff;
+      --blue-2: #83c9ff;
+      --green: #23c55e;
+      --green-2: #16a34a;
       --shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
       --radius: 20px;
       --max: 1180px;
@@ -51,33 +51,28 @@
       text-decoration: underline;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     .container {
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
     }
 
     .topbar {
-      background: #04101a;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      color: #d8e6f1;
+      background: #030f18;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      color: #dbe8f3;
       font-size: 14px;
     }
 
     .topbar .container {
       display: flex;
       justify-content: space-between;
-      gap: 14px;
+      gap: 12px;
       padding: 10px 0;
       flex-wrap: wrap;
     }
 
     .topbar a {
-      color: #ffffff;
+      color: #fff;
       font-weight: 700;
     }
 
@@ -85,16 +80,16 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(7, 26, 42, 0.92);
+      background: rgba(6, 23, 38, 0.94);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     .nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
       padding: 18px 0;
     }
 
@@ -107,9 +102,9 @@
     .brand {
       font-size: 30px;
       font-weight: 900;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.6px;
       line-height: 1;
-      color: #ffffff;
+      color: #fff;
     }
 
     .brand span {
@@ -120,14 +115,14 @@
       color: var(--muted);
       font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.4px;
       font-weight: 700;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 18px;
       padding: 0;
       margin: 0;
       flex-wrap: wrap;
@@ -149,6 +144,7 @@
       cursor: pointer;
       text-decoration: none;
       transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+      text-align: center;
     }
 
     .btn:hover {
@@ -158,7 +154,7 @@
 
     .btn-primary {
       background: var(--green);
-      color: #03150a;
+      color: #04150b;
     }
 
     .btn-primary:hover {
@@ -168,11 +164,11 @@
     .btn-secondary {
       background: transparent;
       color: var(--blue-2);
-      border: 1px solid rgba(120, 194, 255, 0.35);
+      border: 1px solid rgba(131,201,255,0.28);
     }
 
     .btn-secondary:hover {
-      background: rgba(120, 194, 255, 0.08);
+      background: rgba(131,201,255,0.08);
     }
 
     section {
@@ -180,15 +176,15 @@
     }
 
     .hero {
-      padding: 78px 0 56px;
+      padding: 68px 0 54px;
       background:
-        radial-gradient(circle at top right, rgba(68,168,255,0.14), transparent 30%),
+        radial-gradient(circle at top right, rgba(70,171,255,0.14), transparent 28%),
         linear-gradient(180deg, #071a2a 0%, #0a2235 100%);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.04fr 0.96fr;
+      grid-template-columns: 1.06fr 0.94fr;
       gap: 28px;
       align-items: start;
     }
@@ -196,8 +192,8 @@
     .eyebrow {
       display: inline-block;
       color: var(--blue-2);
-      background: rgba(68,168,255,0.08);
-      border: 1px solid rgba(68,168,255,0.22);
+      background: rgba(70,171,255,0.08);
+      border: 1px solid rgba(70,171,255,0.2);
       border-radius: 999px;
       padding: 8px 12px;
       font-size: 12px;
@@ -209,26 +205,24 @@
 
     h1, h2, h3 {
       margin-top: 0;
-      line-height: 1.1;
-      letter-spacing: -0.5px;
+      line-height: 1.08;
+      letter-spacing: -0.6px;
+      color: #fff;
     }
 
     h1 {
-      font-size: clamp(40px, 6vw, 68px);
+      font-size: clamp(40px, 6vw, 70px);
       margin-bottom: 16px;
-      color: #ffffff;
     }
 
     h2 {
-      font-size: clamp(28px, 3.5vw, 42px);
+      font-size: clamp(28px, 3.4vw, 42px);
       margin-bottom: 14px;
-      color: #ffffff;
     }
 
     h3 {
       font-size: 24px;
       margin-bottom: 10px;
-      color: #ffffff;
     }
 
     .lead {
@@ -248,17 +242,23 @@
     }
 
     .hero-points li {
-      background: rgba(16, 44, 67, 0.9);
+      background: rgba(15,43,66,0.96);
       border: 1px solid var(--line);
       border-radius: 14px;
-      padding: 14px 14px;
+      padding: 14px;
       font-weight: 700;
-      color: #eaf5ff;
+      color: #eef8ff;
       box-shadow: var(--shadow);
     }
 
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
     .card {
-      background: linear-gradient(180deg, rgba(16,44,67,0.98), rgba(14,36,56,0.98));
+      background: linear-gradient(180deg, rgba(15,43,66,0.98), rgba(12,33,51,0.98));
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -299,7 +299,7 @@
       font-size: 14px;
       font-weight: 800;
       margin-bottom: 6px;
-      color: #f3f9ff;
+      color: #f5fbff;
     }
 
     input,
@@ -307,19 +307,19 @@
     textarea {
       width: 100%;
       border-radius: 12px;
-      border: 1px solid rgba(120,194,255,0.18);
-      background: #0d2235;
-      color: #ffffff;
+      border: 1px solid rgba(131,201,255,0.18);
+      background: #0c2235;
+      color: #fff;
       font-size: 16px;
-      padding: 14px 14px;
+      padding: 14px;
       outline: none;
     }
 
     input:focus,
     select:focus,
     textarea:focus {
-      border-color: rgba(68,168,255,0.55);
-      box-shadow: 0 0 0 3px rgba(68,168,255,0.10);
+      border-color: rgba(70,171,255,0.55);
+      box-shadow: 0 0 0 3px rgba(70,171,255,0.1);
     }
 
     textarea {
@@ -329,12 +329,12 @@
 
     input::placeholder,
     textarea::placeholder {
-      color: #9cb3c7;
+      color: #9eb6c9;
     }
 
     .consent-box {
-      border: 1px solid rgba(120,194,255,0.18);
-      background: rgba(120,194,255,0.06);
+      border: 1px solid rgba(131,201,255,0.18);
+      background: rgba(131,201,255,0.05);
       border-radius: 14px;
       padding: 14px;
     }
@@ -356,21 +356,55 @@
       font-size: 13px;
     }
 
+    .success-banner {
+      display: none;
+      margin-bottom: 18px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: rgba(35,197,94,0.14);
+      border: 1px solid rgba(35,197,94,0.35);
+      color: #cbffda;
+      font-weight: 700;
+    }
+
+    .band {
+      background: rgba(8, 30, 47, 0.78);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .trust-item {
+      padding: 18px 16px;
+      text-align: center;
+      border-radius: 14px;
+      background: rgba(15,43,66,0.96);
+      border: 1px solid var(--line);
+      font-weight: 800;
+      color: #f4fbff;
+      box-shadow: var(--shadow);
+    }
+
     .section-intro {
       max-width: 74ch;
       margin-bottom: 26px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
     }
 
     .split {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 22px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
     }
 
     .product-tag {
@@ -391,32 +425,15 @@
     }
 
     .product-box ul,
-    .policy-box ul {
+    .policy-box ul,
+    .contact-list {
       margin: 12px 0 0;
       padding-left: 20px;
     }
 
-    .band {
-      background: rgba(9, 31, 48, 0.72);
-      border-top: 1px solid rgba(255,255,255,0.05);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .trust-item {
-      padding: 18px 16px;
-      text-align: center;
-      border-radius: 14px;
-      background: rgba(16,44,67,0.96);
-      border: 1px solid var(--line);
-      font-weight: 800;
-      color: #f4faff;
-      box-shadow: var(--shadow);
+    .contact-list li {
+      color: var(--muted);
+      margin-bottom: 8px;
     }
 
     .video-grid {
@@ -449,16 +466,6 @@
       align-items: start;
     }
 
-    .contact-list {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .contact-list li {
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
     .cta-box {
       padding: 28px;
       display: flex;
@@ -466,17 +473,6 @@
       gap: 18px;
       align-items: center;
       flex-wrap: wrap;
-    }
-
-    .success-banner {
-      display: none;
-      margin-bottom: 18px;
-      padding: 14px 16px;
-      border-radius: 12px;
-      background: rgba(34,197,94,0.14);
-      border: 1px solid rgba(34,197,94,0.35);
-      color: #c9ffd9;
-      font-weight: 700;
     }
 
     footer {
@@ -487,7 +483,7 @@
     }
 
     footer a {
-      color: #ffffff;
+      color: #fff;
     }
 
     .footer-grid {
@@ -523,41 +519,108 @@
       .nav {
         flex-direction: column;
         align-items: flex-start;
+        padding: 14px 0 16px;
       }
 
       nav ul {
-        gap: 14px;
+        gap: 12px 16px;
+      }
+
+      section {
+        padding: 56px 0;
       }
 
       .hero {
-        padding-top: 54px;
+        padding: 38px 0 40px;
       }
 
-      h1 {
-        font-size: 52px;
+      .hero-grid {
+        gap: 18px;
+      }
+
+      .hero-card {
+        margin-top: 4px;
       }
     }
 
     @media (max-width: 640px) {
+      .container {
+        width: min(var(--max), calc(100% - 24px));
+      }
+
+      .topbar .container {
+        padding: 10px 0;
+      }
+
       .brand {
-        font-size: 24px;
+        font-size: 23px;
+      }
+
+      .subbrand {
+        font-size: 11px;
+        letter-spacing: 1.2px;
+      }
+
+      nav ul {
+        gap: 10px 14px;
+      }
+
+      nav a {
+        font-size: 14px;
       }
 
       h1 {
-        font-size: 42px;
+        font-size: 28px;
+        line-height: 1.08;
+        margin-bottom: 14px;
+      }
+
+      h2 {
+        font-size: 22px;
       }
 
       .lead {
-        font-size: 18px;
-      }
-
-      .btn {
-        width: 100%;
-        text-align: center;
+        font-size: 17px;
+        margin-bottom: 18px;
       }
 
       .hero-points {
         grid-template-columns: 1fr;
+        margin-bottom: 18px;
+      }
+
+      .hero-points li {
+        padding: 13px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero-actions .btn,
+      .nav .btn {
+        width: 100%;
+      }
+
+      .hero-card,
+      .info-box,
+      .product-box,
+      .video-box,
+      .policy-box {
+        padding: 18px;
+      }
+
+      .cta-box {
+        padding: 20px;
+      }
+
+      .eyebrow {
+        margin-bottom: 14px;
+      }
+
+      .topbar {
+        font-size: 13px;
       }
     }
   </style>
@@ -613,7 +676,7 @@
             <li>Installation follow-up and support</li>
           </ul>
 
-          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <div class="hero-actions">
             <a class="btn btn-primary" href="#quote-form">Get Pricing</a>
             <a class="btn btn-secondary" href="#videos">Watch Videos</a>
             <a class="btn btn-secondary" href="https://tools.breezyservice.com/" target="_blank" rel="noopener noreferrer">Open Product Builder</a>
@@ -759,24 +822,4 @@
               <li>30-watt solar panel</li>
               <li>Whisper quiet poly vinyl blades</li>
               <li>Variable speed 24V brushless motor</li>
-              <li>Corrosion-resistant powder coated finish</li>
-              <li>Protective animal screen</li>
-              <li>Hail and wind resistant design</li>
-              <li>Smart temperature and humidity controls</li>
-              <li>Lifetime warranty</li>
-            </ul>
-          </div>
-
-          <div class="card product-box">
-            <div class="product-tag">Authorized Breezy Product</div>
-            <h3>Breezy Whole House Fan</h3>
-            <p>Stealth Pro X Series</p>
-            <div class="price">$5,600.00</div>
-            <ul>
-              <li>High-CFM whole home airflow system</li>
-              <li>Ultra-quiet insulated ducting</li>
-              <li>Energy-efficient ECM motor</li>
-              <li>Soft-start and variable speed control</li>
-              <li>Advanced ceiling grille with built-in dampers</li>
-              <li>Programmable timer and controls</li>
-              <li>Fresh air cooling through open window
+              <li>Corrosion-
