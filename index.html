@@ -10,12 +10,14 @@
   />
   <style>
     :root {
-      --bg: #061522;
-      --bg2: #0a2235;
+      --bg: #04111b;
+      --bg2: #081b2b;
+      --bg3: #0c2940;
       --panel: #0f2940;
-      --panel2: #123149;
+      --panel2: #14324a;
+      --panel3: #183a56;
       --text: #edf6fc;
-      --muted: #a6bfd0;
+      --muted: #a9bfd0;
       --line: rgba(92, 176, 247, 0.18);
       --blue: #47abff;
       --blue2: #84ccff;
@@ -37,7 +39,9 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #04111b 0%, #0a2032 100%);
+      background:
+        radial-gradient(circle at top right, rgba(71, 171, 255, 0.08), transparent 20%),
+        linear-gradient(180deg, var(--bg) 0%, #081b2b 48%, #0a2032 100%);
       color: var(--text);
       line-height: 1.6;
     }
@@ -49,6 +53,11 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     .container {
@@ -97,6 +106,7 @@
       display: flex;
       flex-direction: column;
       gap: 4px;
+      min-width: 0;
     }
 
     .brand {
@@ -164,11 +174,21 @@
     .btn-secondary {
       background: transparent;
       color: var(--blue2);
-      border: 1px solid rgba(132,204,255,0.3);
+      border: 1px solid rgba(132,204,255,0.28);
     }
 
     .btn-secondary:hover {
       background: rgba(132,204,255,0.08);
+    }
+
+    .btn-secondary-dark {
+      background: rgba(255,255,255,0.03);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .btn-secondary-dark:hover {
+      background: rgba(255,255,255,0.06);
     }
 
     section {
@@ -178,13 +198,13 @@
     .hero {
       padding: 64px 0 48px;
       background:
-        radial-gradient(circle at top right, rgba(71,171,255,0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(71,171,255,0.16), transparent 28%),
         linear-gradient(180deg, #061726 0%, #0a2235 100%);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.06fr 0.94fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 28px;
       align-items: center;
     }
@@ -241,7 +261,8 @@
     .product-box p,
     .product-box li,
     .small,
-    .process-step p {
+    .process-step p,
+    .contact-panel p {
       color: var(--muted);
     }
 
@@ -254,7 +275,7 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-top: 22px;
+      margin-top: 24px;
     }
 
     .card {
@@ -270,7 +291,8 @@
     .policy-box,
     .quote-box,
     .product-box,
-    .process-step {
+    .process-step,
+    .contact-panel {
       padding: 24px;
     }
 
@@ -410,7 +432,7 @@
 
     textarea {
       resize: vertical;
-      min-height: 120px;
+      min-height: 130px;
     }
 
     input::placeholder,
@@ -453,6 +475,27 @@
       font-weight: 700;
     }
 
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .contact-panel h3 {
+      margin-bottom: 12px;
+    }
+
+    .contact-panel .contact-item {
+      margin-bottom: 14px;
+    }
+
+    .contact-panel .contact-item strong {
+      display: block;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
     .cta-box {
       padding: 28px;
       display: flex;
@@ -486,13 +529,13 @@
       gap: 18px;
       flex-wrap: wrap;
     }
-
     @media (max-width: 1024px) {
       .hero-grid,
       .grid-2,
       .grid-3,
       .split,
-      .trust-grid {
+      .trust-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -557,7 +600,8 @@
       }
 
       .hero-actions .btn,
-      .nav .btn {
+      .nav .btn,
+      .cta-box .btn {
         width: 100%;
       }
 
@@ -567,12 +611,18 @@
       .policy-box,
       .quote-box,
       .product-box,
-      .process-step {
+      .process-step,
+      .contact-panel {
         padding: 18px;
       }
 
       .cta-box {
         padding: 20px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 10px;
       }
     }
   </style>
@@ -600,13 +650,18 @@
           <li><a href="#videos">Videos</a></li>
           <li><a href="#products">Products</a></li>
           <li><a href="#process">Process</a></li>
-          <li><a href="#quote-form">Quote</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li><a href="#privacy-policy">Privacy</a></li>
           <li><a href="#terms-conditions">Terms</a></li>
         </ul>
       </nav>
 
-      <a class="btn btn-primary" href="#quote-form">Request a Quote</a>
+      <a
+        class="btn btn-primary"
+        href="https://misfit.ai/CaptureLead?org=69b25666001fb2c8ea192033&company=Home+Efficiency+Pros"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Chat With an Agent</a>
     </div>
   </header>
 
@@ -629,9 +684,20 @@
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#quote-form">Get Pricing</a>
+            <a
+              class="btn btn-primary"
+              href="https://misfit.ai/CaptureLead?org=69b25666001fb2c8ea192033&company=Home+Efficiency+Pros"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Chat With an Agent</a>
+            <a class="btn btn-secondary" href="#quote-form">Request a Quote</a>
             <a class="btn btn-secondary" href="#videos">Watch Videos</a>
-            <a class="btn btn-secondary" href="https://tools.breezyservice.com/" target="_blank" rel="noopener noreferrer">Open Product Builder</a>
+            <a
+              class="btn btn-secondary-dark"
+              href="https://tools.breezyservice.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Open Product Builder</a>
           </div>
         </div>
 
@@ -641,7 +707,7 @@
             We help customers compare Breezy whole house fan and solar attic fan options, request quotes, and move into installation follow-up and customer support.
           </p>
           <p>
-            Reach out for pricing, product questions, appointment coordination, and service-related communication.
+            Reach out for pricing, product questions, appointment coordination, installation follow-up, and service-related communication.
           </p>
         </div>
       </div>
@@ -668,6 +734,9 @@
                 allowfullscreen
               ></iframe>
             </div>
+            <p class="small" style="margin-top: 12px;">
+              Learn how Breezy whole house fan systems work and how they help move heat and stale air out of the home.
+            </p>
           </div>
 
           <div class="card video-box">
@@ -681,6 +750,9 @@
                 allowfullscreen
               ></iframe>
             </div>
+            <p class="small" style="margin-top: 12px;">
+              See how Breezy solar attic fan systems help reduce attic heat and improve airflow for homeowners.
+            </p>
           </div>
         </div>
       </div>
@@ -692,7 +764,7 @@
           <div class="trust-item">Authorized Breezy Dealer</div>
           <div class="trust-item">Embedded Product Videos</div>
           <div class="trust-item">Optional SMS Consent</div>
-          <div class="trust-item">Professional Quote Form</div>
+          <div class="trust-item">Live Chat Agent Available</div>
         </div>
       </div>
     </section>
@@ -757,7 +829,6 @@
         </div>
       </div>
     </section>
-
     <section id="process">
       <div class="container">
         <div class="section-intro">
@@ -770,9 +841,9 @@
         <div class="grid-3">
           <div class="card process-step">
             <strong>Step 1</strong>
-            <h3>Request Information</h3>
+            <h3>Contact Our Team</h3>
             <p>
-              Submit the quote form with your contact information and the Breezy product you want to learn more about.
+              Start with the live chat agent or submit the quote form with your contact information and product interest.
             </p>
           </div>
 
@@ -819,16 +890,46 @@
       </div>
     </section>
 
-    <section id="quote-form">
-      <div class="container">
-        <div class="section-intro">
-          <h2>Request a Quote</h2>
+    <section id="contact">
+      <div class="container contact-grid">
+        <div class="card contact-panel">
+          <h2>Contact Home Efficiency Pros</h2>
           <p>
-            Send us your information and we’ll follow up by phone or email about Breezy product options, pricing, and next steps. SMS updates are optional.
+            Home Efficiency Pros is an authorized Breezy dealer and installer serving Utah homeowners with product education, quotes, installation coordination, and customer support.
+          </p>
+
+          <div class="contact-item">
+            <strong>Phone</strong>
+            <a href="tel:+18016620967">(801) 662-0967</a>
+          </div>
+
+          <div class="contact-item">
+            <strong>Email</strong>
+            <a href="mailto:info@homeefficiencypros.com">info@homeefficiencypros.com</a>
+          </div>
+
+          <div class="contact-item">
+            <strong>Live Chat Agent</strong>
+            <a
+              href="https://misfit.ai/CaptureLead?org=69b25666001fb2c8ea192033&company=Home+Efficiency+Pros"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Open Chat With an Agent</a>
+          </div>
+
+          <p class="small" style="margin-top: 18px;">
+            Customers may contact us by phone, email, website form, or live chat to request information, pricing, scheduling, and support.
           </p>
         </div>
 
-        <div class="card quote-box">
+        <div class="card quote-box" id="quote-form">
+          <div class="section-intro" style="margin-bottom: 18px;">
+            <h2>Request a Quote</h2>
+            <p>
+              Send us your information and we’ll follow up by phone or email about Breezy product options, pricing, and next steps. SMS updates are optional.
+            </p>
+          </div>
+
           <div id="form-success" class="success-banner">
             Thanks. Your request was submitted successfully. Our team will follow up soon.
           </div>
@@ -842,31 +943,53 @@
             <div class="grid-2">
               <div>
                 <label for="full_name">Full Name</label>
-                <input id="full_name" name="Full Name" type="text" required />
+                <input id="full_name" name="Full Name" type="text" autocomplete="name" required />
               </div>
               <div>
                 <label for="phone">Phone Number</label>
-                <input id="phone" name="Phone Number" type="tel" required />
+                <input id="phone" name="Phone Number" type="tel" autocomplete="tel" required />
               </div>
             </div>
 
-            <div>
-              <label for="email">Email Address</label>
-              <input id="email" name="Email" type="email" required />
+            <div class="grid-2">
+              <div>
+                <label for="email">Email Address</label>
+                <input id="email" name="Email Address" type="email" autocomplete="email" required />
+              </div>
+              <div>
+                <label for="interest">Interested In</label>
+                <select id="interest" name="Interested In" required>
+                  <option value="">Select an option</option>
+                  <option>Breezy Whole House Fan</option>
+                  <option>Breezy Solar Attic Fan</option>
+                  <option>Whole House + Solar Attic Fan Package</option>
+                  <option>General Product Question</option>
+                </select>
+              </div>
             </div>
 
             <div>
               <label for="message">Project Details</label>
-              <textarea id="message" name="Message" placeholder="Tell us about your home, goals, or questions..."></textarea>
+              <textarea
+                id="message"
+                name="Project Details"
+                placeholder="Tell us about your home, goals, or questions..."
+                required
+              ></textarea>
             </div>
 
             <div class="consent-box">
               <div class="checkbox-row">
-                <input type="checkbox" id="sms_consent" name="SMS Consent" />
+                <input type="checkbox" id="sms_consent" name="SMS Consent" value="Yes" />
                 <label for="sms_consent" class="small">
-                  I agree to receive SMS messages from Home Efficiency Pros related to my inquiry, quotes, scheduling, and customer support. Message frequency varies. Message & data rates may apply. Reply STOP to opt out, HELP for help. Consent is not required to purchase.
+                  I agree to receive SMS messages from Home Efficiency Pros related to my inquiry, quotes, scheduling, installation follow-up, and customer support. Message frequency varies. Message and data rates may apply. Reply STOP to opt out. Reply HELP for help. Consent is not required to purchase.
                 </label>
               </div>
+              <p class="small" style="margin: 10px 0 0;">
+                By submitting this form, you agree to be contacted by Home Efficiency Pros regarding your request. See our
+                <a href="#privacy-policy">Privacy Policy</a> and
+                <a href="#terms-conditions">Terms &amp; Conditions</a>.
+              </p>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit Request</button>
@@ -880,31 +1003,30 @@
         <div class="card policy-box">
           <h2>Privacy Policy</h2>
           <p>
-            Home Efficiency Pros respects your privacy. We collect contact information submitted through this website to respond to inquiries, provide quotes, and deliver requested services.
+            Home Efficiency Pros respects your privacy. We collect contact information submitted through this website to respond to inquiries, provide quotes, coordinate installation follow-up, and deliver requested services.
           </p>
           <ul>
-            <li>Information collected: name, phone number, email, and message details</li>
-            <li>Information is used for communication, scheduling, and customer support</li>
-            <li>We do not sell or share personal information with third parties for marketing</li>
-            <li>SMS consent data is not shared with third parties</li>
+            <li>Information collected may include name, phone number, email address, product interest, and message details.</li>
+            <li>Information is used for communication, scheduling, quote follow-up, installation coordination, and customer support.</li>
+            <li>We do not sell or share personal information with third parties for marketing purposes.</li>
+            <li>SMS consent data and phone numbers provided for SMS are not shared with third parties or affiliates for marketing.</li>
           </ul>
         </div>
       </div>
     </section>
-
     <section id="terms-conditions">
       <div class="container">
         <div class="card policy-box">
-          <h2>Terms & Conditions</h2>
+          <h2>Terms &amp; Conditions</h2>
           <p>
-            By submitting this form, you agree to be contacted by Home Efficiency Pros regarding your request.
+            By submitting this form or using our live chat intake, you agree to be contacted by Home Efficiency Pros regarding your request.
           </p>
           <ul>
-            <li>Communication may occur via phone, email, or SMS (if opted in)</li>
-            <li>Message frequency varies based on customer interaction</li>
-            <li>Message and data rates may apply</li>
-            <li>You may opt out of SMS at any time by replying STOP</li>
-            <li>Reply HELP for assistance</li>
+            <li>Communication may occur via phone, email, or SMS if you opt in to SMS.</li>
+            <li>Message frequency varies based on customer interaction and requested services.</li>
+            <li>Message and data rates may apply.</li>
+            <li>You may opt out of SMS at any time by replying STOP.</li>
+            <li>Reply HELP for assistance.</li>
           </ul>
         </div>
       </div>
@@ -915,9 +1037,17 @@
         <div class="cta-box card">
           <div>
             <h3>Ready to get started?</h3>
-            <p class="small">Request pricing or ask a question — we’ll follow up quickly.</p>
+            <p class="small">Chat with our agent or request pricing and our team will follow up quickly.</p>
           </div>
-          <a class="btn btn-primary" href="#quote-form">Get a Quote</a>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a
+              class="btn btn-primary"
+              href="https://misfit.ai/CaptureLead?org=69b25666001fb2c8ea192033&company=Home+Efficiency+Pros"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Chat With an Agent</a>
+            <a class="btn btn-secondary" href="#quote-form">Request a Quote</a>
+          </div>
         </div>
       </div>
     </section>
@@ -927,14 +1057,17 @@
     <div class="container footer-grid">
       <div>
         <strong>Home Efficiency Pros</strong><br />
-        Authorized Breezy Dealer & Installer<br />
+        Authorized Breezy Dealer &amp; Installer<br />
         <a href="tel:+18016620967">(801) 662-0967</a><br />
         <a href="mailto:info@homeefficiencypros.com">info@homeefficiencypros.com</a>
       </div>
 
       <div class="footer-links">
+        <a href="#videos">Videos</a>
+        <a href="#products">Products</a>
+        <a href="#process">Process</a>
         <a href="#privacy-policy">Privacy Policy</a>
-        <a href="#terms-conditions">Terms & Conditions</a>
+        <a href="#terms-conditions">Terms &amp; Conditions</a>
       </div>
     </div>
   </footer>
